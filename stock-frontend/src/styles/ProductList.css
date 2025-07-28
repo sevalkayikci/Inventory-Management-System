@@ -1,0 +1,51 @@
+.product-list-container {
+  max-width: 600px;
+  margin: 40px auto;
+  padding: 24px;
+  background: #E8FFD7;
+  border-radius: 16px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+
+}
+
+.product-list-container h2 {
+  text-align: center;
+  color: #2e7d32; /* koyu yeşil */
+  margin-bottom: 24px;
+  font-size: 22px;
+}
+
+.product-table {
+  width: 100%;
+  border-collapse: collapse;
+  border-radius: 8px;
+  overflow: hidden;
+  background-color: #f1f8f2; /* tabloya çok açık yeşil */
+}
+
+.product-table thead {
+  background-color: #c8e6c9; /* tablo başlığı açık yeşil */
+}
+
+.product-table th, .product-table td {
+  padding: 14px 12px;
+  text-align: left;
+  border-bottom: 1px solid #b2dfdb;
+  font-size: 15px;
+}
+
+.product-table th {
+  font-weight: 600;
+  color: #1b5e20;
+}
+
+.product-table tr:last-child td {
+  border-bottom: none;
+}
+
+.no-products {
+  text-align: center;
+  color: #555;
+  font-style: italic;
+}

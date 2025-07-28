@@ -1,0 +1,113 @@
+
+.stock-container {
+  background-color: #E8FFD7;
+  padding: 25px;
+  border-radius: 20px;
+  max-width: 400px;
+  margin: 30px auto;
+  box-shadow: 0 0 12px rgba(0,0,0,0.1);
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.stock-header {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+.stock-header button {
+  flex: 1;
+  margin: 0 5px;
+  padding: 10px;
+  font-weight: bold;
+  background-color: #5E936C;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.stock-header .active {
+  background-color: #3E5F44;
+}
+
+.form-row {
+  margin-bottom: 16px;
+}
+
+.form-row label {
+  font-weight: bold;
+  color: #3E5F44;
+  display: block;
+  margin-bottom: 4px;
+}
+
+.form-row select,
+.form-row input {
+  width: 100%;
+  padding: 8px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+}
+
+.product-list {
+  max-height: 160px;
+  overflow-y: auto;
+  background-color: white;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  padding: 6px;
+  margin-top: 5px;
+}
+
+.product-item {
+  padding: 6px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.product-item:hover {
+  background-color: #93DA97;
+}
+
+.product-item.selected {
+  background-color: #5E936C;
+  color: white;
+}
+
+.btn-row {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.save-btn {
+  flex: 1;
+  background-color: #5E936C;
+  color: white;
+  border: none;
+  padding: 10px;
+  border-radius: 8px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.cancel-btn {
+  flex: 1;
+  background-color: transparent;
+  color: #3E5F44;
+  border: 1px solid #3E5F44;
+  padding: 10px;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.product-list {
+  max-height: 160px;
+  overflow-y: auto;
+  background-color: white;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  padding: 6px;
+  margin-top: 5px;
+}

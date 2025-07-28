@@ -1,0 +1,52 @@
+.product-add-container {
+  max-width: 400px;
+  margin: 40px auto;
+  background: #E8FFD7;
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.08);
+  font-family: 'Segoe UI', sans-serif;
+}
+
+.product-add-container h2 {
+  text-align: center;
+  margin-bottom: 20px;
+  color: #3a5743; /* koyu yeşil */
+}
+
+.product-add-form {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.product-add-form input,
+.product-add-form select {
+  padding: 10px;
+  border: 1px solid #a6d1b8;
+  border-radius: 8px;
+  font-size: 15px;
+  background-color: #f3fff5;
+}
+
+.product-add-form button {
+  padding: 10px;
+  background-color: #4b8d69; /* yeşil */
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background 0.3s ease;
+}
+
+.product-add-form button:hover {
+  background-color: #3a7356;
+}
+
+.message {
+  text-align: center;
+  margin-top: 15px;
+  font-weight: bold;
+  color: #2b9348;
+}

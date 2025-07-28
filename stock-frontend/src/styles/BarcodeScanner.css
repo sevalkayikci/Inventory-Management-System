@@ -1,0 +1,99 @@
+/* Ana Container */
+.barcode-container {
+  max-width: 400px;
+  margin: 30px auto;
+  padding: 20px;
+  background: #E8FFD7;
+  border-radius: 14px;
+  box-shadow: 0 4px 10px rgba(62, 95, 68, 0.2);
+  text-align: center;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+.barcode-text span {
+  color: #cc2c2c;
+  font-weight: bold;
+}
+
+.warning {
+  color: #cc2c2c;
+  font-weight: 600;
+  margin: 10px 0;
+}
+
+.product-info {
+  background-color: #fff;
+  padding: 10px;
+  margin-top: 10px;
+  border-radius: 10px;
+  box-shadow: 0 0 5px rgba(94, 147, 108, 0.2);
+}
+
+button {
+  margin-top: 10px;
+  padding: 10px 20px;
+  background-color: #5E936C;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+button:hover {
+  background-color: #3E5F44;
+}
+
+.retry-btn {
+  background-color: #5E936C;
+}
+
+.add-btn {
+  background-color: #93DA97;
+  color: #2c2c2c;
+}
+
+/* Modal */
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+.modal-content {
+  background-color: #fff;
+  padding: 25px;
+  border-radius: 12px;
+  width: 90%;
+  max-width: 400px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.modal-content h3 {
+  margin-bottom: 10px;
+  color: #3E5F44;
+}
+
+.modal-content input,
+.modal-content select {
+  padding: 10px;
+  border: 1px solid #5E936C;
+  border-radius: 6px;
+  background-color: #fff;
+  font-size: 1rem;
+}
+
+.close-btn {
+  background-color: #ccc;
+  color: #000;
+}
