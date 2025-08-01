@@ -18,7 +18,8 @@ exports.getAllProducts = async (req, res) => {
  */
 exports.createProduct = async (req, res) => {
   try {
-    const { name, barcode, unit, price } = req.body;
+    const { name, barcode, unit, price, min_threshold } = req.body;
+
 
     if (!name || !barcode) {
       return res.status(400).json({ message: 'Ürün adı ve barkod zorunludur' });
@@ -29,7 +30,7 @@ exports.createProduct = async (req, res) => {
       return res.status(409).json({ message: 'Bu barkoda sahip bir ürün zaten var' });
     }
 
-    const newProduct = await Product.create({ name, barcode, unit, price });
+    const newProduct = await Product.create({ name, barcode, unit, price, min_threshold });
     res.status(201).json(newProduct);
   } catch (err) {
     res.status(500).json({ message: 'Sunucu hatası' });
@@ -42,7 +43,9 @@ exports.createProduct = async (req, res) => {
 exports.updateProduct = async (req, res) => {
   try {
     const id = req.params.id;
-    const { name, barcode, unit, price } = req.body;
+    const { name, barcode, unit, price, min_threshold } = req.body;
+
+
 
     const product = await Product.findByPk(id);
     if (!product) return res.status(404).json({ message: 'Ürün bulunamadı' });
@@ -51,6 +54,7 @@ exports.updateProduct = async (req, res) => {
     product.barcode = barcode || product.barcode;
     product.unit = unit || product.unit;
     product.price = price || product.price;
+    product.min_threshold = min_threshold || product.min_threshold;
 
     await product.save();
     res.json(product);
@@ -156,29 +160,33 @@ exports.getLowStockProducts = async (req, res) => {
       include: [
         {
           model: db.Product,
-          attributes: ['id', 'name', 'unit']
+          attributes: ['id', 'name', 'unit', 'min_threshold']
         }
       ],
-      group: ['product_id', 'Product.id', 'Product.name', 'Product.unit'],
-      having: db.Sequelize.literal(`
-        SUM(
-          CASE 
-            WHEN movement_type = 'in' THEN quantity
-            WHEN movement_type = 'out' THEN -quantity
-            ELSE 0
-          END
-        ) <= 15
-      `),
-      order: [[db.Sequelize.literal('quantity'), 'ASC']],
+      group: [
+        'product_id',
+        'Product.id',
+        'Product.name',
+        'Product.unit',
+        'Product.min_threshold'
+      ],
       raw: true
     });
 
-    const result = products.map(p => ({
-      id: p['Product.id'],
-      name: p['Product.name'],
-      unit: p['Product.unit'],
-      quantity: Number(p.quantity) || 0
-    }));
+    // Her ürün için stok eşik kontrolü
+    const result = products
+      .filter(p => {
+        const quantity = Number(p.quantity) || 0;
+        const threshold = Number(p['Product.min_threshold']) || 0;
+        return quantity <= threshold;
+      })
+      .map(p => ({
+        id: p['Product.id'],
+        name: p['Product.name'],
+        unit: p['Product.unit'],
+        quantity: Number(p.quantity) || 0,
+        min_threshold: p['Product.min_threshold']
+      }));
 
     res.json(result);
   } catch (err) {

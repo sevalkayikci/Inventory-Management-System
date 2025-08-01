@@ -68,3 +68,44 @@ exports.getAllStockMovements = async (req, res) => {
     res.status(500).json({ message: 'Sunucu hatası' });
   }
 };
+
+
+exports.getProductHistory = async (req, res) => {
+  try {
+    const { product_id, start, end } = req.query;
+
+    if (!product_id || !start || !end) {
+      return res.status(400).json({ message: 'Eksik parametre' });
+    }
+
+    // Bitiş tarihine 1 gün ekleyelim ki o gün de dahil olsun
+    const endDate = new Date(new Date(end).getTime() + 24 * 60 * 60 * 1000);
+
+    const movements = await db.StockMovement.findAll({
+      where: {
+        product_id,
+        created_at: {
+          [db.Sequelize.Op.between]: [new Date(start), endDate]
+        }
+      },
+      include: [
+        { model: db.Location, attributes: ['name'] },
+        { model: db.Product, attributes: ['name'] }
+      ],
+      order: [['created_at', 'ASC']]
+    });
+
+    const result = movements.map(m => ({
+      date: m.created_at.toISOString().split('T')[0],
+      product: m.Product?.name || '',
+      location: m.Location?.name || '',
+      type: m.movement_type,
+      quantity: m.quantity
+    }));
+
+    res.json(result);
+  } catch (err) {
+    console.error('Geçmiş çekilemedi:', err);
+    res.status(500).json({ message: 'Sunucu hatası' });
+  }
+};

@@ -9,6 +9,8 @@ import ProductList from './components/ProductList.jsx';
 import ProductAdd from './components/ProductAdd.jsx';
 import StockControl from './components/StockControl.jsx';
 import LowStock from './components/LowStock.jsx';
+import Transfer from './components/Transfer.jsx';
+import ProductHistory from './components/ProductHistory.jsx';
 function App() {
   return (
     <Router>
@@ -22,6 +24,8 @@ function App() {
         <Route path="/add-product" element={<ProductAdd />} />
         <Route path="/stock-control" element={<StockControl />} />
         <Route path="/low-stock" element={<LowStock />} />
+        <Route path="/transfer" element={<Transfer />} />
+        <Route path="/product-history" element={<ProductHistory />} />
 
 
       </Routes>

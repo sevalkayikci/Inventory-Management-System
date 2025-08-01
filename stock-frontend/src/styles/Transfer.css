@@ -1,33 +1,19 @@
-.stock-container {
+.transfer-container {
   background-color: #E8FFD7;
   padding: 25px;
   border-radius: 20px;
   max-width: 400px;
   margin: 30px auto;
-  box-shadow: 0 0 12px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 0 12px rgba(0,0,0,0.1);
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
-.stock-header {
-  display: flex;
-  justify-content: space-between;
-  margin-bottom: 20px;
-}
-
-.stock-header button {
-  flex: 1;
-  margin: 0 5px;
-  padding: 10px;
+.transfer-title {
+  text-align: center;
+  font-size: 20px;
   font-weight: bold;
-  background-color: #5E936C;
-  color: white;
-  border: none;
-  border-radius: 8px;
-  cursor: pointer;
-}
-
-.stock-header .active {
-  background-color: #3E5F44;
+  color: #3E5F44;
+  margin-bottom: 20px;
 }
 
 .form-row {
@@ -49,43 +35,11 @@
   border: 1px solid #ccc;
 }
 
-.product-list,
-.product-suggestions {
-  max-height: 160px;
-  overflow-y: auto;
-  background-color: white;
-  border: 1px solid #ccc;
-  border-radius: 8px;
-  padding: 6px;
-  margin-top: 5px;
-  font-size: 15px;
-  position: relative;
-  z-index: 999;
-}
-
-.product-item,
-.product-suggestions li {
-  padding: 6px;
-  border-radius: 5px;
-  cursor: pointer;
-  color: #3E5F44;
-}
-
-.product-item:hover,
-.product-suggestions li:hover {
-  background-color: #93DA97;
-}
-
-.product-item.selected,
-.product-suggestions li.selected {
-  background-color: #5E936C;
-  color: white;
-}
-
 .btn-row {
   display: flex;
   justify-content: space-between;
   gap: 10px;
+  margin-top: 10px;
 }
 
 .save-btn {
@@ -107,4 +61,42 @@
   padding: 10px;
   border-radius: 8px;
   cursor: pointer;
+}
+
+.message {
+  margin-top: 1rem;
+  text-align: center;
+  font-weight: bold;
+  font-size: 0.95rem;
+  color: #ff5a5a;
+}
+
+
+.product-suggestions {
+  max-height: 160px;
+  overflow-y: auto;
+  background-color: white;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  padding: 6px;
+  margin-top: 5px;
+  font-size: 15px;
+  z-index: 999;
+  position: relative;
+}
+
+.product-suggestions li {
+  padding: 6px;
+  border-radius: 5px;
+  cursor: pointer;
+  color: #3E5F44;
+}
+
+.product-suggestions li:hover {
+  background-color: #93DA97;
+}
+
+.product-suggestions li.selected {
+  background-color: #5E936C;
+  color: white;
 }

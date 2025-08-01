@@ -18,12 +18,15 @@ const authRouter = require("./routes/auth");
 const productRouter = require("./routes/product");
 const stockMovementRouter = require("./routes/stock");
 const locationRouter = require("./routes/location");
+const transferRoutes = require('./routes/transfer');
 
 // Router kullanımı
 app.use("/api/auth", authRouter);
 app.use("/api/products", productRouter);
 app.use("/api/stock_movements", stockMovementRouter);
 app.use("/api/locations", locationRouter);
+app.use('/api/stock_transfer', transferRoutes);
+
 
 // Test endpoint
 app.get("/", (req, res) => {

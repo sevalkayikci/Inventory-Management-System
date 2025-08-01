@@ -35,9 +35,11 @@ export default function Dashboard() {
         </button>
         <button onClick={() => navigate('/barcode')}><FaBarcode /> Barkod Oku</button>
         <button onClick={() => navigate('/stock-control')}><FaExchangeAlt /> Stok Kontrol</button>
+        <button onClick={() => navigate('/transfer')}><FaExchangeAlt /> Depo Transferi</button>
         <button onClick={() => navigate('/add-product')}><FaPlus /> Ürün Ekle</button>
         <button onClick={() => navigate('/products')}><FaBoxOpen /> Ürünleri Listele</button>
         <button onClick={() => navigate('/locations')}><FaWarehouse /> Depoları Listele</button>
+        <button onClick={() => navigate('/product-history')}><FaBoxOpen /> Ürün Geçmişi</button>
         <button onClick={() => navigate('/register')}><FaUserPlus /> Kullanıcı Ekle</button>
       </div>
     </div>

@@ -1,0 +1,118 @@
+
+.history-container {
+  background-color: #E8FFD7;
+  padding: 25px;
+  border-radius: 20px;
+  max-width: 500px;
+  margin: 30px auto;
+  box-shadow: 0 0 12px rgba(0, 0, 0, 0.1);
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: #3E5F44;
+}
+
+.history-container h2 {
+  text-align: center;
+  margin-bottom: 20px;
+  font-size: 26px;
+  color: #3E5F44;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-bottom: 20px;
+}
+
+.search-input {
+  padding: 10px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  font-size: 1rem;
+  background-color: white;
+  color: #3E5F44;
+  width: 100%;
+}
+
+.product-suggestions {
+  max-height: 160px;
+  overflow-y: auto;
+  background-color: white;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  padding: 6px;
+  margin-top: -8px;
+  list-style: none;
+  font-size: 15px;
+  z-index: 1000;
+  position: relative;
+}
+
+.product-suggestions li {
+  padding: 6px;
+  border-radius: 5px;
+  cursor: pointer;
+  color: #3E5F44;
+}
+
+.product-suggestions li:hover,
+.product-suggestions li.selected {
+  background-color: #93DA97;
+  color: white;
+}
+
+.form-group input[type="date"] {
+  padding: 10px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  font-size: 1rem;
+  background-color: white;
+  color: #3E5F44;
+}
+
+.form-group button {
+  width: 100%;
+  padding: 12px;
+  background-color: #5E936C;
+  color: white;
+  font-weight: bold;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.form-group button:hover {
+  background-color: #3E5F44;
+}
+
+.history-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+  font-size: 15px;
+}
+
+.history-table th,
+.history-table td {
+  border: 1px solid #ccc;
+  padding: 10px;
+  text-align: center;
+  background-color: #f9fff4;
+  color: #3E5F44;
+}
+
+.history-table th {
+  background-color: #C7EABF;
+}
+
+button:last-of-type {
+  display: block;
+  margin: 20px auto 0;
+  background-color: #5E936C;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 8px;
+  font-weight: bold;
+  cursor: pointer;
+}

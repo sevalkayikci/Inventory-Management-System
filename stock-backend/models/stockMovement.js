@@ -8,7 +8,7 @@ module.exports = (sequelize, DataTypes) => {
       type: DataTypes.STRING,
       allowNull: false,
       validate: {
-        isIn: [['in', 'out']]
+        isIn: [['in', 'out', 'transfer']]
       }
     }
   }, {
